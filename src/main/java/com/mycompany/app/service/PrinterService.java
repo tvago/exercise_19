@@ -31,10 +31,11 @@ public class PrinterService {
 			});
 
 			if (conditionsToApply.isEmpty()) {
-				System.out.println(number);
+				outputDevice.write(number.toString());
+				System.out.println();
 			} else {
 				for (Condition condition : conditionsToApply) {
-					System.out.print(condition.getTextOutput());
+					outputDevice.write(condition.getTextOutput());
 				}
 				conditionsToApply.clear();
 				System.out.println();
